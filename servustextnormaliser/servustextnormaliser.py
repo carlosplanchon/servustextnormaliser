@@ -9,12 +9,19 @@ from contractions import fix
 
 
 class TextNormaliser:
-    def __init__(self) -> None:
-        self.remove_accents = True
-        self.remove_links = True
-        self.remove_contractions = True
-        self.no_symbols = True
-        self.remove_non_ascii_characters = True
+    def __init__(
+        self,
+        remove_accents=True,
+        remove_links=True,
+        remove_contractions=True,
+        no_symbols=True,
+        remove_non_ascii_characters=True
+        ) -> None:
+        self.remove_accents = remove_accents
+        self.remove_links = remove_links
+        self.remove_contractions = remove_contractions
+        self.no_symbols = no_symbols
+        self.remove_non_ascii_characters = remove_non_ascii_characters
 
     def normalise(self, text: str) -> str:
         # We remove tildes before strange symbols.
