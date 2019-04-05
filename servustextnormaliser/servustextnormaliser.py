@@ -11,12 +11,12 @@ from contractions import fix
 class TextNormaliser:
     def __init__(
         self,
-        remove_accents=True,
-        remove_links=True,
-        remove_contractions=True,
-        no_symbols=True,
-        remove_non_ascii_characters=True
-        ) -> None:
+        remove_accents: bool = True,
+        remove_links: bool = True,
+        remove_contractions: bool = True,
+        no_symbols: bool = True,
+        remove_non_ascii_characters: bool = True
+            ) -> None:
         self.remove_accents = remove_accents
         self.remove_links = remove_links
         self.remove_contractions = remove_contractions
