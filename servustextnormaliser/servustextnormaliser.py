@@ -13,13 +13,13 @@ class TextNormaliser:
         self,
         remove_accents: bool = True,
         remove_links: bool = True,
-        remove_contractions: bool = True,
+        expand_contractions: bool = True,
         no_symbols: bool = True,
         remove_non_ascii_characters: bool = True
             ) -> None:
         self.remove_accents = remove_accents
         self.remove_links = remove_links
-        self.remove_contractions = remove_contractions
+        self.expand_contractions = expand_contractions
         self.no_symbols = no_symbols
         self.remove_non_ascii_characters = remove_non_ascii_characters
 
@@ -31,7 +31,7 @@ class TextNormaliser:
         if self.remove_links:
             text = remove_url(text)
 
-        if self.remove_contractions:
+        if self.expand_contractions:
             text = fix(text)
 
         if self.remove_non_ascii_characters:
