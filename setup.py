@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 
 from setuptools import setup
+from pathlib import Path
 
-
-with open("README.md", "r") as f:
-    readme = f.read()
+readme = Path("README.md").read_text()
 
 setup(
     name="servustextnormaliser",
     packages=["servustextnormaliser"],
-    version="0.1",
+    version="0.2",
     license="GPL3",
     description="Python3 module to normalise text.",
     long_description=readme,
@@ -18,7 +17,7 @@ setup(
     author_email="bubbledoloresuruguay2@gmail.com",
     url="https://github.com/carlosplanchon/servustextnormaliser",
     download_url="https://github.com/carlosplanchon/"
-        "servustextnormaliser/archive/v0.1.tar.gz",
+        "servustextnormaliser/archive/v0.2.tar.gz",
     keywords=["normalise", "text", "regex"],
     install_requires=[
         "removeurl",
