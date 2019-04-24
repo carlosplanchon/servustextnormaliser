@@ -9,6 +9,11 @@ from contractions import fix
 
 
 class TextNormaliser:
+    """
+    Text normaliser.
+
+    It includes common used functions to normalise text.
+    """
     def __init__(
         self,
         remove_accents: bool = True,
@@ -24,6 +29,12 @@ class TextNormaliser:
         self.remove_non_ascii_characters = remove_non_ascii_characters
 
     def normalise(self, text: str) -> str:
+        """
+        Normalise text.
+
+        :param text: str: Text to normalise.
+
+        """
         # We remove tildes before strange symbols.
         if self.remove_accents:
             text = remove_accents(text)
